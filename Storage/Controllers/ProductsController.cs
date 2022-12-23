@@ -157,5 +157,19 @@ namespace Storage.Controllers
         {
           return _context.Product.Any(e => e.Id == id);
         }
+
+        public async Task<ActionResult> GetProducts()
+        {
+            var newList = new List<ProductViewModel>();
+
+            return View(newList);
+        }
+
+        public async Task<ActionResult> Filtering(string Category)
+        {
+            //Filter products base on category
+
+            return View();
+        }
     }
 }
